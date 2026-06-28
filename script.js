@@ -1,7 +1,6 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const menu = document.querySelector("[data-menu]");
 const header = document.querySelector("[data-header]");
-const coverCard = document.querySelector("[data-cover-card]");
 
 if (navToggle && menu) {
   navToggle.addEventListener("click", () => {
@@ -16,6 +15,15 @@ if (navToggle && menu) {
       document.body.classList.remove("menu-open");
       navToggle.setAttribute("aria-expanded", "false");
     });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.classList.contains("is-open")) {
+      menu.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.focus();
+    }
   });
 }
 
@@ -46,29 +54,3 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
-
-const tryUseBookCover = () => {
-  if (!coverCard) return;
-
-  const coverPath = "assets/book-cover.jpg";
-  const image = new Image();
-
-  image.onload = () => {
-    const img = document.createElement("img");
-    img.className = "book-cover-img";
-    img.src = coverPath;
-    img.alt = "God Calling in Poetry book cover by Frank Raj";
-    coverCard.replaceWith(img);
-  };
-
-  image.onerror = () => {
-    coverCard.setAttribute(
-      "aria-label",
-      "Book cover placeholder. Replace with the real cover at assets/book-cover.jpg when available."
-    );
-  };
-
-  image.src = coverPath;
-};
-
-tryUseBookCover();
