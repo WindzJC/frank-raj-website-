@@ -373,7 +373,7 @@ p {
 .platform-preview,
 .reflection-shell,
 .detail-card,
-.praise-card,
+.theme-card,
 .cta-card {
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(8, 20, 38, 0.1);
@@ -403,14 +403,14 @@ p {
 .author-card p,
 .platform-preview p,
 .reflection-shell p,
-.praise-card p {
+.theme-card p {
   margin-top: 0.85rem;
   color: rgba(8, 20, 38, 0.68);
 }
 
 .journey-section,
 .details-section,
-.praise-section {
+.themes-section {
   background: linear-gradient(180deg, rgba(8, 20, 38, 0.025), rgba(8, 20, 38, 0.055));
 }
 
@@ -420,7 +420,7 @@ p {
 }
 
 .journey-grid,
-.praise-grid {
+.themes-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
@@ -552,7 +552,7 @@ p {
   font-size: clamp(2.5rem, 4vw, 3.6rem);
 }
 
-.praise-card {
+.theme-card {
   position: relative;
   min-height: 245px;
   padding: 2rem;
@@ -561,14 +561,14 @@ p {
   justify-content: space-between;
 }
 
-.praise-mark {
+.theme-mark {
   color: var(--gold);
   font-family: var(--font-serif);
   font-size: 0.9rem;
   letter-spacing: 0.12em;
 }
 
-.praise-card p {
+.theme-card p {
   color: var(--ink);
   font-family: var(--font-serif);
   font-size: clamp(1.2rem, 2vw, 1.48rem);
@@ -765,12 +765,12 @@ p {
   }
 
   .journey-grid,
-  .praise-grid {
+  .themes-grid {
     grid-template-columns: 1fr;
   }
 
   .journey-card,
-  .praise-card {
+  .theme-card {
     min-height: 0;
   }
 
